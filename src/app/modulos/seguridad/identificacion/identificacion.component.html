@@ -1,0 +1,31 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card">
+        <div class="card-body text-center">
+          <div class="page-section">
+            <div class="container">
+              <h1 class="text-center wow fadeInUp">Inicia Sesión</h1>
+
+              <form [formGroup]="fgValidador" (ngSubmit)="identificarUsuario()">
+                <div class="col-sm-12">
+                  <div  class="form-group">
+                    <input formControlName="usuario" type="text" id="correo" class="form-control" placeholder="Correo..">
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <input formControlName="contrasena" type="password" name="password" class="form-control"
+                      placeholder="Password" required>
+                  </div>
+                </div>
+                <button type="submit"
+                  class="btn btn-primary wow zoomIn">Iniciar Sesión</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

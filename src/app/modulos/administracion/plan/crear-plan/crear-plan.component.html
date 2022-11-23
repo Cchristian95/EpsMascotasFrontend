@@ -1,0 +1,36 @@
+<div class="page-section">
+    <div class="container">
+      <p class="p">Crear Plan</p>
+
+      <form class="contact-form mt-5" [formGroup]="planForm" (ngSubmit)="guardarPlan()" method="POST">
+        <div class="row mb-3">
+          <div class="col-sm-6 py-2 wow fadeInLeft">
+            <label for="fullName">Nombre</label>
+            <input formControlName="nombre" type="text" id="nombre" class="form-control" placeholder="Nombre.." >
+            <div class="text-danger"
+              *ngIf="planForm.get('nombre')?.hasError('required') && planForm.get('nombre')?.touched">
+              <span>El nombre <strong>es requerido</strong></span>
+            </div>
+          </div>
+          <div class="col-sm-6 py-2 wow fadeInRight">
+            <label for="estado">Descripción</label>
+            <input formControlName="descripcion" type="text" id="descripcion" class="form-control" placeholder="Descripción.." >
+            <div class="text-danger"
+              *ngIf="planForm.get('descripcion')?.hasError('required') && planForm.get('descripcion')?.touched">
+              <span>La descripcion <strong>es requerida</strong></span>
+            </div>
+          </div>
+          <div class="col-sm-6 py-2 wow fadeInRight">
+            <label for="especie">Precio</label>
+            <input formControlName="precio" type="text" id="precio" class="form-control" placeholder="Precio.." >
+            <div class="text-danger"
+              *ngIf="planForm.get('precio')?.hasError('required') && planForm.get('precio')?.touched">
+              <span>El precio <strong>es requerido</strong></span>
+            </div>
+          </div>
+        </div>
+        <button [disabled]="!planForm.valid" type="submit" class="btn btn-primary wow zoomIn" >Enviar</button>
+      </form>
+
+    </div>
+  </div>

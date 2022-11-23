@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo" style="font-size: 32px;">Mascotas</span>
+                    <br>
+                    <a routerLink="/administracion/crear-mascota" class="btn btn-success float-end">Nueva Mascota</a>
+                    <table id="Tabla"  class="table table-success table-striped mt-4">
+                        <thead>
+                          <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Foto</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Especie</th>
+                            <th scope="col">Comentario</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Eliminar</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let p of listadoRegistros">
+                            <td>{{p.nombre}}</td>
+                            <td><img src="{{p.foto}}" style="width: 50%;"></td>
+                            <td>{{p.estado}}</td>
+                            <td>{{p.especie}}</td>
+                            <td>{{p.comentario}}</td>
+                            <td><i class='fa fa-check-square-o' style='color: blue' routerLink="/administracion/editar-mascota/{{p.id}}"></i></td>
+                            <td>
+                              <i (click)="eliminarMascota(p.id)" class='fa fa-trash' style='color: red'></i>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

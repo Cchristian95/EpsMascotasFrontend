@@ -1,0 +1,32 @@
+<div class="page-section">
+    <div class="container">
+        <h1 class="text-center wow fadeInUp">Crear Producto</h1>
+
+        <form class="contact-form mt-5" [formGroup]="productoForm" (ngSubmit)="editarProducto()" method="POST">
+            <div class="row mb-3">
+                <input type="hidden" formControlName="id" id="id">
+                <div class="col-sm-6 py-2 wow fadeInRight">
+                    <label for="categoria">Tipo</label>
+                    <input formControlName="tipo" type="text" id="tipo" class="form-control"
+                        placeholder="Tipo..">
+                </div>
+                <div class="col-sm-6 py-2 wow fadeInLeft">
+                    <label for="fullName">Nombre</label>
+                    <input formControlName="nombre" type="text" id="nombre" class="active form-control"
+                        placeholder="Nombre..">
+                </div>
+                <div class="col-sm-6 py-2 wow fadeInRight">
+                    <label for="estado">Descripción</label>
+                    <input formControlName="descripcion" type="text" id="descripcion" class="form-control"
+                        placeholder="Descripción..">
+                </div>
+                <div class="col-sm-6 py-2 wow fadeInRight">
+                    <label for="especie">Precio</label>
+                    <input formControlName="precio" type="text" id="precio" class="form-control" placeholder="Precio..">
+                </div>
+            </div>
+            <button [disabled]="!productoForm.valid" type="submit" class="btn btn-primary wow zoomIn">Enviar</button>
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="page-section">
+    <div class="container">
+        <p class="p">Crear Producto</p>
+
+        <form class="contact-form mt-5" [formGroup]="productoForm" (ngSubmit)="guardarProducto()" method="POST">
+            <div class="row mb-3">
+                <div class="col-sm-6 py-2 wow fadeInRight">
+                    <label for="categoria">Tipo</label>
+                    <input formControlName="tipo" type="text" id="tipo" class="form-control"
+                        placeholder="Tipo..">
+                    <div class="text-danger"
+                        *ngIf="productoForm.get('tipo')?.hasError('required') && productoForm.get('tipo')?.touched">
+                        <span>El tipo <strong>es requerido</strong></span>
+                    </div>
+                </div>
+                <div class="col-sm-6 py-2 wow fadeInLeft">
+                    <label for="fullName">Nombre</label>
+                    <input formControlName="nombre" type="text" id="nombre" class="form-control" placeholder="Nombre..">
+                    <div class="text-danger"
+                        *ngIf="productoForm.get('nombre')?.hasError('required') && productoForm.get('nombre')?.touched">
+                        <span>El nombre <strong>es requerido</strong></span>
+                    </div>
+                </div>
+                <div class="col-sm-6 py-2 wow fadeInRight">
+                    <label for="estado">Descripción</label>
+                    <input formControlName="descripcion" type="text" id="descripcion" class="form-control"
+                        placeholder="Descripción..">
+                    <div class="text-danger"
+                        *ngIf="productoForm.get('descripcion')?.hasError('required') && productoForm.get('descripcion')?.touched">
+                        <span>La descripcion <strong>es requerida</strong></span>
+                    </div>
+                </div>
+                <div class="col-sm-6 py-2 wow fadeInRight">
+                    <label for="especie">Precio</label>
+                    <input formControlName="precio" type="text" id="precio" class="form-control" placeholder="Precio..">
+                    <div class="text-danger"
+                        *ngIf="productoForm.get('precio')?.hasError('required') && productoForm.get('precio')?.touched">
+                        <span>El precio <strong>es requerido</strong></span>
+                    </div>
+                </div>
+            </div>
+            <button [disabled]="!productoForm.valid" type="submit" class="btn btn-primary wow zoomIn">Enviar</button>
+        </form>
+
+    </div>
+</div>
